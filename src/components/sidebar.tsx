@@ -8,6 +8,8 @@ import { HiGlobeEuropeAfrica } from "react-icons/hi2";
 import { GiHorizonRoad } from "react-icons/gi";
 import { LuSettings2 } from "react-icons/lu";
 
+import { IoIosLogOut } from "react-icons/io";
+
 const navlinks = [
   {
     href: "/",
@@ -59,12 +61,12 @@ export default function Sidebar() {
         <span className="logoText">Compute</span>
       </div>
 
-      <nav className="d-flex flex-column gap-4">
+      <nav className="d-flex flex-column justify-content-between gap-4">
         {navlinks.map((navLink, index) => (
           <NavLink
             to={`${navLink.href}`}
             className="d-flex gap-3 align-items-center p-2"
-            key={navLink.title}
+            key={index}
             style={({ isActive }) => {
               return {
                 fontWeight: isActive ? 500 : "",
@@ -79,6 +81,15 @@ export default function Sidebar() {
             <span className="">{navLink.title}</span>
           </NavLink>
         ))}
+        <div
+          className="logout p-2 d-flex align-items-center gap-1"
+          style={{
+            color: "#707276",
+          }}
+        >
+          <IoIosLogOut size={20} />
+          <span className="">Logout</span>
+        </div>
       </nav>
     </div>
   );

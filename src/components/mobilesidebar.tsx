@@ -8,6 +8,8 @@ import { HiGlobeEuropeAfrica } from "react-icons/hi2";
 import { GiHorizonRoad } from "react-icons/gi";
 import { LuSettings2 } from "react-icons/lu";
 
+import { IoIosLogOut } from "react-icons/io";
+
 const navlinks = [
   {
     href: "/",
@@ -55,15 +57,7 @@ export default function Mobilesidebar() {
   return (
     <div
       id="mobileSidebar"
-      className="bg-white p-2 gap-2 shadow"
-      style={{
-        width: "fit-content",
-        height: "100vh",
-        position: "absolute",
-        left: 0,
-        top: "3.8rem",
-        zIndex: 50,
-      }}
+      className=" p-2 shadow "
     >
       <nav className="d-flex flex-column gap-2">
         {navlinks.map((navLink, index) => (
@@ -85,6 +79,12 @@ export default function Mobilesidebar() {
           </NavLink>
         ))}
       </nav>
+      <div
+        className="logout p-2 "
+      >
+        <IoIosLogOut size={20} />
+        <span className="">Logout</span>
+      </div>
     </div>
   );
 }

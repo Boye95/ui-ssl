@@ -85,6 +85,35 @@ a {
   border-radius: 50%;
 }
 
+#mobileSidebar {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 3.8rem;
+  z-index: 50;
+}
+
+#mobileSidebar .logout {
+  cursor: pointer;
+  color: #707276;
+  justify-self: self-end;
+  height: fit-content;
+  display: flex;
+  gap: 1rem;
+  align-content: center;
+  position: absolute;
+  bottom: 5rem;
+}
+
+#mobileSidebar nav {
+  height: fit-content;
+}
+
 /* reporting */
 #reporting {
   color: #5f5e61;
@@ -258,5 +287,10 @@ a {
   #cards {
     grid-template-columns: repeat(1, auto);
     justify-content: center;
+  }
+
+  #header #search {
+    width: 4rem;
+    overflow: hidden;
   }
 }
