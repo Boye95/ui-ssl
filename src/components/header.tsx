@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import search from "../assets/icons/search.svg";
 import notification from "../assets/icons/notification.svg";
 import user from "../assets/image.png";
 import menu from "../assets/menu.png";
 import Mobilesidebar from "./mobilesidebar";
+
+import { FiSearch } from "react-icons/fi";
 
 export default function Header() {
   const [toggleNav, setToggleNav] = useState(false);
@@ -33,7 +34,7 @@ export default function Header() {
       </div>
 
       <div id="search" className=" d-flex gap-1 align-items-center p-1">
-        <img src={search} alt="" className="icon" />
+        <FiSearch size={20} />
         <input type="search" name="search" id="" />
       </div>
 

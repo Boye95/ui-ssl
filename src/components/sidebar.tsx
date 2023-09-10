@@ -1,72 +1,70 @@
-import board from "../assets/icons/board.svg";
-import schedule from "../assets/icons/schedule.svg";
-import messages from "../assets/icons/messages.svg";
-import team from "../assets/icons/team.svg";
-import tools from "../assets/icons/tools.svg";
-import roadmap from "../assets/icons/roadmap.svg";
-import settings from "../assets/icons/settings.svg";
-import reporting from '../assets/icons/reporting.svg';
 import { NavLink } from "react-router-dom";
+
+import { RxDashboard } from "react-icons/rx";
+import { BsCalendarEvent } from "react-icons/bs";
+import { BiSolidReport, BiMessage } from "react-icons/bi";
+import { RiTeamLine } from "react-icons/ri";
+import { HiGlobeEuropeAfrica } from "react-icons/hi2";
+import { GiHorizonRoad } from "react-icons/gi";
+import { LuSettings2 } from "react-icons/lu";
 
 const navlinks = [
   {
     href: "/",
     title: "Board",
-    icon: board,
+    icon: <RxDashboard size={20} />,
   },
   {
     href: "schedule",
     title: "Plan Schedule",
-    icon: schedule,
+    icon: <BsCalendarEvent size={20} />,
   },
   {
     href: "reporting",
     title: "Reporting",
-    icon: reporting,
+    icon: <BiSolidReport size={20} />,
   },
   {
     href: "messages",
     title: "Messages",
-    icon: messages,
+    icon: <BiMessage size={20} />,
   },
   {
     href: "teams",
     title: "Team Member",
-    icon: team,
+    icon: <RiTeamLine size={20} />,
   },
   {
     href: "plugins",
     title: "Tools Plugin",
-    icon: tools,
+    icon: <HiGlobeEuropeAfrica size={20} />,
   },
   {
     href: "roadmap",
     title: "Roadmap",
-    icon: roadmap,
+    icon: <GiHorizonRoad size={20} />,
   },
   {
     href: "settings",
     title: "Settings",
-    icon: settings,
+    icon: <LuSettings2 size={20} />,
   },
 ];
 
 export default function Sidebar() {
   return (
-    <div
-      id="sidebar"
-      className="bg-white p-1 gap-5"
-    >
+    <div id="sidebar" className="bg-white p-1 gap-5">
       <div className="logo gap-2 fw-bold">
         <span className="logoDot bg-info"></span>
         <span className="logoText">Compute</span>
       </div>
 
       <nav className="d-flex flex-column gap-4">
-        {navlinks.map((navLink) => (
+        {navlinks.map((navLink, index) => (
           <NavLink
             to={`${navLink.href}`}
             className="d-flex gap-3 align-items-center p-2"
+            key={navLink.title}
             style={({ isActive }) => {
               return {
                 fontWeight: isActive ? 500 : "",
@@ -76,13 +74,8 @@ export default function Sidebar() {
               };
             }}
           >
-            <img
-              src={navLink.icon}
-              alt={`${navLink.title} icon`}
-              style={{
-                width: "1rem",
-              }}
-            />
+            {navLink.icon}
+
             <span className="">{navLink.title}</span>
           </NavLink>
         ))}

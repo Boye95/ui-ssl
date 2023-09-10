@@ -151,10 +151,11 @@ export default function Reporting() {
         </div>
 
         <div id="cards" className="p-3">
-          {cardDetails.map((card) => (
+          {cardDetails.map((card, index) => (
             <div
               id="card"
               className="position-relative d-flex align-items-center flex-column bg-white row"
+              key={index}
             >
               <div
                 className="d-flex align-items-center justify-content-center position-absolute"
@@ -188,8 +189,8 @@ export default function Reporting() {
                   <div className="d-flex flex-column gap-2">
                     <span className="">Team Members</span>
                     <div className="d-flex gap-2">
-                      {card.teamMembersAvatar.map((member) => (
-                      <img src={member} alt="" className="icon" />
+                      {card.teamMembersAvatar.map((member, index) => (
+                        <img src={member} key={index} alt="" className="icon" />
                       ))}
                       <img src={more} alt="" className="icon" />
                     </div>
